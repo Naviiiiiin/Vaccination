@@ -1,0 +1,136 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ABOUT US | COWE</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+<body>
+    
+  <section class="sub-header" style="background-image: linear-gradient(rgba(4,9,30,0.7), rgba(4,9,30,0.7)), url('{% static 'images/doctors.jpg' %}');">
+        <nav>
+            <a href={% url 'index' %}>
+                <p style="color: white; text-decoration: none;">COWE</p>
+            </a>
+                <div class="nav-links" id="navLinks">
+                    <i class="fas fa-times" onclick="hideMenu()"></i>
+                    <ul>
+                        <li><a href="{% url 'index' %}">HOME</a></li>
+                        <li><a href="{% url 'about' %}">ABOUT</a></li> 
+                        <li><a href="{% url 'contact' %}">CONTACT</a></li>
+                    </ul>
+                </div>
+            <i class="fas fa-bars" onclick="showMenu()"></i>
+        </nav>
+    
+    <h1>About Us</h1>
+
+    </section>
+
+   <!--        ABOUT US CONTENT     -->
+
+   <section class="about-us">
+       <div class="row">
+           <div class="about-col">
+               <h1>The most trusted option for your vaccination</h1>
+               <p>Protect yourself and your loved ones from COVID-19 by getting vaccinated. Vaccination is a crucial step in controlling the spread of the virus and returning to normalcy. Ensure your safety and contribute to community health by getting vaccinated today.</p>
+               <a href="" class="btn red-btn">EXPLORE NOW</a>
+           </div>
+
+           <div class="about-col">
+               <img src="{% static 'images/about.jpg' %}" alt=""> 
+           </div>
+
+       </div>
+   </section>
+
+
+   <!-- precaution section -->
+   <div class="pre-container">
+    <div class="pre-row">
+      <div class="col-lg-6 col-md-6 col-sm-12 precaution-column">
+        <h2>Precaution Dose</h2>
+        <ul class="precaution-list">
+          <li>Wash your hands frequently with soap and water for at least 20 seconds.</li>
+          <li>Avoid touching your face, especially your eyes, nose, and mouth.</li>
+          <li>Practice social distancing by staying at least 6 feet away from others.</li>
+          <li>Cover your mouth and nose with a tissue or your elbow when you cough or sneeze.</li>
+          <li>Clean and disinfect frequently-touched objects and surfaces daily.</li>
+        </ul>
+        <a href="{% url 'book_appointment' %}" class="book-slot-button">Book Your Slot</a>
+      </div>
+      <div class="col-lg-6 col-md-6 col-sm-12 image-column">
+        <img src="{% static 'images/Precaution_dose.svg' %}" alt="Precaution Image" class="image"> 
+      </div>
+    </div>
+  </div>
+  
+<!-- Partners section  -->
+<div class="container">
+  <h2 style="margin-bottom: 20px;">Our Partners</h2>
+  <div class="partners-section">
+    <div class="partner-image">
+      <img src="https://www.cowin.gov.in/assets/images/digilocker_new_Logo.svg" alt="Partner 1">
+    </div>
+    <div class="partner-image">
+      <img src="https://www.cowin.gov.in/assets/images/umang_new_logo.svg" alt="Partner 2">
+    </div>
+    <div class="partner-image">
+      <img src="https://www.cowin.gov.in/assets/images/arogya_setu_logo1.svg" alt="Partner 3">
+    </div>
+    <div class="partner-image">
+      <img src="https://www.cowin.gov.in/assets/images/my_gov_new_logo.svg" alt="Partner 4">
+    </div>
+  </div>
+  <div class="partner-links">
+    <a href="#">View More</a>
+    <a href="#">Register as Partner</a>
+  </div>
+</div>
+
+
+
+
+<!--      footer          -->
+
+    <section class="footer">
+        <h4>About Us</h4>
+        <p>Empowering seamless COVID-19 vaccination. Our secure platform ensures organized access to essential vaccination certificates. Trust our expertise.</p>
+        <p>&copy; 2024 COWE. All rights reserved.</p>
+
+        <div class="icons">
+
+            <i class="fab fa-facebook"></i>
+            <i class="fab fa-twitter"></i>
+            <i class="fab fa-instagram"></i>
+            <i class="fab fa-linkedin"></i>
+        </div>
+    
+    </section>
+
+
+
+
+    <script>
+
+        var navLinks = document.getElementById("navLinks");
+
+        function showMenu(){
+            navLinks.style.right = "0";
+        }
+
+        function hideMenu(){
+            navLinks.style.right = "-200px"
+        }
+
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Appointment Details</title>
+    <!-- Add your CSS styles here -->
+    <style>
+        /* Add your CSS styles */
+        body {
+            font-family: Arial, sans-serif;
+            background: url("https://cdn-europe1.lanmedia.fr/var/europe1/storage/images/europe1/sante/coronavirus-quel-calendrier-pour-la-vaccination-en-france-4007115/56331453-1-fre-FR/Coronavirus-quel-calendrier-pour-la-vaccination-en-France.jpg") no-repeat;
+            background-size: cover;
+            background-position: center;
+            color: white;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .container {
+            width: 30%; /* Adjust container width */
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.3); /* White box shadow */
+            text-align: center; /* Center-align text */
+        }
+        h1 {
+            text-align: center;
+        }
+        .appointment-details {
+            margin-top: 20px;
+        }
+        .detail-item {
+            margin-bottom: 10px;
+        }
+        .detail-label {
+            font-weight: bold;
+        }
+        .thank-you-message {
+            font-size: 20px;
+            margin-top: 20px;
+        }
+        .return-button {
+            margin-top: 20px;
+            background-color: #4CAF50; /* Green */
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .return-button:hover {
+            background-color: #45a049; /* Darker green */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Appointment Details</h1>
+        <div class="appointment-details">
+            <div class="detail-item">
+                <span class="detail-label">Booking Area:</span> {{ appointment.booking_area }}
+            </div>
+            <div class="detail-item">
+                <span class="detail-label">Hospital Name:</span> {{ appointment.hospital_name }}
+            </div>
+            <div class="detail-item">
+                <span class="detail-label">Booking Date:</span> {{ appointment.booking_date }}
+            </div>
+            <div class="detail-item">
+                <span class="detail-label">Booking Time:</span> {{ appointment.booking_time }}
+            </div>
+            
+        </div>
+        <div class="thank-you-message">
+            <B>Thank you for booking! </B><br>
+            <B>Your appointment details are confirmed.</B>
+        </div>
+        <a href="{% url 'index' %}" class="return-button">Return to Home Page</a>
+
+    </div>
+</body>
+</html>

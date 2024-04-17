@@ -1,0 +1,498 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COWE | Vaccination Center</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css'%}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+
+        <style>
+        .header {
+           
+            background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7));
+        
+        }
+        
+
+  
+    </style>
+   
+</head>
+<body>
+    
+  <section class="header" style="background-image: linear-gradient(rgba(4,9,30,0.7), rgba(4,9,30,0.7)), url('{% static 'images/bg.jpg' %}')";>
+    <nav>
+        <a href="{% url 'index' %}">
+            <p>COWE</p>
+        </a>
+            <div class="nav-links" id="navLinks">
+                <i class="fas fa-times" onclick="hideMenu()"></i>
+                <ul>
+                    <li><a href="{% url 'index' %}">HOME</a></li>
+                    <li><a href="{% url 'login' %}">LOGIN</a></li>
+                    <li><a href="{% url 'register' %}">REGISTER</a></li>
+                    <li><a href="{% url 'about' %}">ABOUT</a></li>
+                    <li><a href="{% url 'contact' %}">CONTACT</a></li>
+                    <li><a href="{% url 'book_appointment' %}">BOOK APPOINTMENT</a></li>
+                </ul>
+            </div>
+        <i class="fas fa-bars" onclick="showMenu()"></i>
+    </nav>
+
+<div class="text-box">
+   <h1>India's Biggest Vaccination Portal</h1> 
+    <p>First choice of every INDIAN..</p>
+
+    <a href="" class="btn">Visit Us to Know More</a>
+
+</div>
+
+</section>
+
+
+    <a href="tel:+1234567890" class="sticky-call-sign">
+        <span class="phone-ring">
+          <i class="fas fa-phone" id="call"></i>
+        </span>
+      </a>
+
+<!-- counter -->
+<section class="vaccination-stats" id="vaccination-stats">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3">
+        <div class="stat-box">
+          <div class="count-up" data-target="250">0</div>
+          <h3>People Vaccinated Today</h3>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="stat-box">
+          <div class="count-up" data-target="10">0</div>
+          <h3>Centers</h3>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="stat-box">
+          <div class="count-up" data-target="100">0</div>
+          <h3>Vaccines Delivered</h3>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="stat-box">
+          <div class="count-up" data-target="200">0</div>
+          <h3>2nd Doses</h3>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>  
+
+
+<!-- book  -->
+<section class="contagion" id="contagion">
+    <div class="info">
+      <h2 class="title">Get vaccinated in 3 steps</h2>
+      
+    </div>
+    <div class="content">
+      <div class="cards">
+        <div class="card">
+          <img src="{% static 'images/book2.jpg' %}" alt="" />
+          <div class="text">
+            <h3 class="title">Book an appointment</h3>
+            <p class="description">
+              Login/register to the website and book a slot according to your convienence
+            </p>
+          </div>
+        </div>
+        <div class="card">
+          <img src="{% static 'images/vaccine.jpg' %}" alt="" />
+          <div class="text">
+            <h3 class="title">Get Vaccinated</h3>
+            <p class="description">
+              Reach to the nearest vaccination center and get vaccinated
+            </p>
+          </div>
+        </div>
+        {% comment %} <div class="card">
+          <img src="{% static 'images/certi.jpg' %}" alt="" />
+          <div class="text">
+            <h3 class="title">Get certificate</h3>
+            <p class="description">
+              Download your e-certificate and wait for the second dose
+            </p>
+          </div> {% endcomment %}
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- FACILITIES     SECTION        -->
+
+<section class="facilities">
+    <h1>Our Facilities</h1>
+    <p>We offers cutting-edge technology and state-of-the-art facilities to ensure a seamless and efficient vaccination process. </p>
+
+    <div class="row">
+        <div class="fac-col">
+            <img src="{% static 'images/medicine.jpg' %}" alt="">
+            <h3>Discounted Medication</h3>
+            <p>All the necessary medications are provided with upto 20% discount* </p>
+        </div>
+        
+        <div class="fac-col">
+            <img src="{% static 'images/doc.jpg' %}" alt="">
+            <h3>Doctor Consultation</h3>
+            <p>You can avail one free Doctor consultation within 24hrs of your vaccination</p>
+        </div>
+        
+        <div class="fac-col">
+            <img src="{% static 'images/health.jpg' %}" alt="">
+            <h3>Free Health Check-up</h3>
+            <p>You get a free health checkup on registering</p>
+        </div>
+    </div>
+
+
+</section>
+
+
+    <!-- TESTIMONIALS  SECTION       -->
+
+
+    <section class="testimonials">
+      <h1>Our Testimonials</h1>
+      <p>Our customers rave about us! From the seamless booking process to the friendly staff, they appreciate our commitment to excellence.</p>
+      <div class="owl-carousel owl-theme">
+        <div class="item">
+          <div class="test-col">
+            <img src="{% static 'images/user1.jpg' %}">
+            <div>
+              <p>It was my first time booking for a vaccination online, and not gonna lie it was totally worth it. kudos to the team!</p>
+              <h5>Kritika</h5>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="test-col">
+            <img src="{% static 'images/user.png' %}">
+            <div>
+              <p>Loved the portal. was hassle free and didnt took much time for registration, totally worth it, do register for the vaccine</p>
+              <h5>Mitul</h5>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="test-col">
+            <img src="{% static 'images/user2.jpg ' %}">
+            <div>
+              <p>Got the booking slot for the same day, and there wasnt any issue during the whole process.</p>
+              <h5>David</h5>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="test-col">
+            <img src="{% static 'images/user.png' %}">
+            <div>
+              <p>Overall good experience, a boon for the corporate and working people to skip the waiting in lines</p>
+              <h5>Vinny</h5>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="test-col">
+            <img src="{% static 'images/user.png' %}">
+            <div>
+              <p>Had a really great experience with the booking and the whole process, gotta tell it was hassle-free.</p>
+              <h5>lakhan</h5>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star-half"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    
+    <!-- Initialize Owl Carousel -->
+    <script>
+      $(document).ready(function(){
+        $(".owl-carousel").owlCarousel({
+          loop: true,
+          margin: 10,
+          responsiveClass: true,
+          responsive: {
+            0: {
+              items: 1,
+              nav: false
+            },
+            600: {
+              items: 2,
+              nav: false
+            },
+            1000: {
+              items: 3,
+              nav: false,
+              loop: false
+            }
+          }
+        });
+      });
+    </script>
+
+<!-- blogs section -->
+
+<section class="container py-5" style="padding-top: 100px !important;">
+  <h2 class="text-center mb-5">Latest Blogs</h2>
+
+  <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+      <div class="col">
+          <div class="card h-100">
+              <img src="https://www.reuters.com/resizer/-ThCdYOrj1CElVhANWvjrUub_v4=/960x0/filters:quality(80)/cloudfront-us-east-2.images.arcpublishing.com/reuters/7U5OD3ZXORJHNNFDSYP5SDZ5XE.jpg" class="card-img-top" alt="Blog 1" style="object-fit: cover; height: 200px;">
+              <div class="card-body">
+                  <h5 class="card-title">COVID hits Australia skipper</h5>
+                  <p class="card-text">before T20 series...</p>
+                  <a href="https://www.reuters.com/sports/cricket/covid-hits-australia-skipper-marsh-before-t20-series-2024-02-08/" class="btn btn-primary">Read more</a>
+              </div>
+          </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4 mb-4">
+          <div class="card h-100">
+              <img src="https://www.hindustantimes.com/ht-img/img/2023/12/18/550x309/WhatsApp_Image_2023-12-18_at_90705_PM_1702913852340_1702913852642.jpeg" class="card-img-top" alt="Blog 2" style="object-fit: cover; height: 200px;">
+              <div class="card-body">
+                  <h5 class="card-title">How dangerous is JN.1 ?</h5>
+                  <p class="card-text">Experts, doctors reveal that...</p>
+                  <a href="https://www.hindustantimes.com/india-news/how-dangerous-is-jn1-covid-variant-101702911772781.html" class="btn btn-primary">Read more</a>
+              </div>
+          </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4 mb-4">
+          <div class="card h-100">
+              <img src="https://static01.nyt.com/images/2024/02/05/well/LONG-COVID-KIDS1/LONG-COVID-KIDS1-jumbo.jpg?quality=75&auto=webp" class="card-img-top" alt="Blog 3" style="object-fit: cover; height: 200px;">
+              <div class="card-body">
+                  <h5 class="card-title">Report Raises Concerns about Covid in Children</h5>
+                  <p class="card-text">The condition is less prevalent among children but...</p>
+                  <a href="https://www.nytimes.com/2024/02/07/well/live/long-covid-children.html" class="btn btn-primary">Read more</a>
+              </div>
+          </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4 mb-4">
+          <div class="card h-100">
+              <img src="https://images.indianexpress.com/2023/12/mansukh.jpg?w=640" class="card-img-top" alt="Blog 4" style="object-fit: cover; height: 200px;">
+              <div class="card-body">
+                  <h5 class="card-title">India logs 614 new infections</h5>
+                  <p class="card-text">The Union Health Minister has directed states to monitor...</p>
+                  <a href="https://indianexpress.com/article/india/covid-19-updates-india-new-strains-coronavirus-9075970/" class="btn btn-primary">Read more</a>
+              </div>
+          </div>
+      </div>
+
+      
+  </div>
+</section>
+
+
+
+  
+
+
+<!-- FAQ section -->
+<div class="faq">
+  <h2>FAQ's</h2>
+<div class="accordian-container">
+
+ <div class="accordian">
+  <div class="question">
+    <h3>Where can I register for COVID-19 vaccination?</h3>
+    <i class="icon fa-solid fa-caret-down"></i>
+  </div>
+  <div class="answer">
+   <p>You need to click on the “Register/Sign In” link to register for COVID-19 vaccination, and follow the steps thereafter.</p>
+  </div>
+ </div>
+
+ <div class="accordian">
+  <div class="question">
+    <h3>Which age groups can register for vaccination?</h3>
+    <i class="icon fa-solid fa-caret-down"></i>
+  </div>
+  <div class="answer ">
+    <p>All beneficiaries who have completed 12 years of age and above on the day of registration (birth year 2011 or earlier) can register for vaccination.</p>
+  </div>
+ </div>
+
+ <div class="accordian">
+  <div class="question">
+    <h3>Is there any registration charge to be paid?</h3>
+    <i class="icon fa-solid fa-caret-down"></i>
+  </div>
+  <div class="answer">
+    <p>No, there is no registration charge.</p>  
+  </div>
+ </div>
+  
+ <div class="accordian">
+  <div class="question">
+    <h3>Is it necessary to register again for 2nd dose or Precaution dose?</h3>
+    <i class="icon fa-solid fa-caret-down"></i>
+  </div>
+  <div class="answer">
+    <p>No, registration is required only once to create a beneficiary account on Co-WIN. Thereafter, appointments can be booked, both online or onsite, and vaccination can be availed from the same account. It is recommended that a beneficiary should register only once so that proper records are maintained. It is also recommended that the registration should be done through an active mobile number to avoid problems in future.</p>  
+  </div>
+ </div>
+  
+  
+</div>
+
+</div>
+
+<!--      footer          -->
+
+    <section class="footer">
+        <h4>About Us</h4>
+        <p>Empowering seamless COVID-19 vaccination. Our secure platform ensures organized access to essential vaccination certificates. Trust our expertise.</p>
+        <p>&copy; 2024 COWE. All rights reserved.</p>
+
+        <div class="icons">
+
+            <i class="fab fa-facebook"></i>
+            <i class="fab fa-twitter"></i>
+            <i class="fab fa-instagram"></i>
+            <i class="fab fa-linkedin"></i>
+        </div>
+        
+    
+    </section>
+
+
+ <script src="{% static 'https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js' %}"></script>
+
+<script>
+  // Navbar toggle
+  function showMenu(){
+    var navLinks = document.getElementById("navLinks");
+    navLinks.style.right = "0";
+  }
+
+  function hideMenu(){
+    var navLinks = document.getElementById("navLinks");
+    navLinks.style.right = "-200px"
+  }
+
+  // Testimonials Carousel
+  document.addEventListener('DOMContentLoaded', function() {
+    var testimonialsCarousel = document.getElementById('testimonialsCarousel');
+    if (testimonialsCarousel) {
+      var testimonialsOwl = new OwlCarousel(testimonialsCarousel, {
+        loop: true,
+        margin: 10,
+        responsiveClass: true,
+        responsive: {
+          0: {
+            items: 1,
+            nav: false
+          },
+          600: {
+            items: 2,
+            nav: false
+          },
+          1000: {
+            items: 3,
+            nav: false,
+            loop: false
+          }
+        }
+      });
+    }
+  });
+
+  // Accordian
+  document.addEventListener('DOMContentLoaded', function() {
+    var accordions = document.querySelectorAll('.accordian');
+    accordions.forEach(accordian => {
+      accordian.addEventListener('click', function() {
+        var icon = this.querySelector('.icon');
+        var answer = this.querySelector('.answer');
+        if (icon.classList.contains('active')) {
+          icon.classList.remove('active');
+          answer.style.maxHeight = null;
+        } else {
+          icon.classList.add('active');
+          answer.style.maxHeight = answer.scrollHeight + 'px';
+        }
+      });
+    });
+  });
+
+  // Count up animation
+  window.addEventListener('scroll', function() {
+    var vaccinationStatsSection = document.getElementById('vaccination-stats');
+    if (isInViewport(vaccinationStatsSection)) {
+      startCountUpAnimation();
+      window.removeEventListener('scroll', startCountUpAnimation);
+    }
+  });
+
+  function isInViewport(element) {
+    var rect = element.getBoundingClientRect();
+    return (
+      rect.top >= 0 &&
+      rect.left >= 0 &&
+      rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+      rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+    );
+  }
+
+  function startCountUpAnimation() {
+    var counters = document.querySelectorAll('.count-up');
+    counters.forEach(counter => {
+      var updateCount = () => {
+        var target = +counter.getAttribute('data-target');
+        var count = +counter.innerText.split('+')[0];
+        var speed = 500;
+        var inc = target / speed;
+        if (count < target) {
+          counter.innerText = Math.ceil(count + inc) + '+';
+          setTimeout(updateCount, 5);
+        } else {
+          counter.innerText = target + '+';
+        }
+      };
+      updateCount();
+    });
+  }
+</script>
+</body>
+</html>  

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Corona Vaccination Booking</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Poppins",sans-serif;
+        }
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: url("https://cdn-europe1.lanmedia.fr/var/europe1/storage/images/europe1/sante/coronavirus-quel-calendrier-pour-la-vaccination-en-france-4007115/56331453-1-fre-FR/Coronavirus-quel-calendrier-pour-la-vaccination-en-France.jpg") no-repeat;
+            background-size: cover;
+            background-position: center;
+        }
+        .wrapper{
+            width: 400px; /* Adjusted width */
+            background: transparent;
+            border: 2px solid rgba(255, 255, 255, .2);
+            backdrop-filter: blur(20px);
+            box-shadow: 0 0 10px rgba(0,0,0,.2);
+            color: white;
+            border-radius: 10px;
+            padding: 30px 40px;
+            text-align: center; /* Center-align the content */
+        }
+        .wrapper h1{
+            font-size: 36px;
+            text-align: center;
+            margin-bottom: 30px; /* Added margin bottom for spacing */
+        }
+        .wrapper .input-box{
+            position: relative;
+            width: 100%;
+            height: 60px; /* Adjusted height */
+            margin: 20px 0; /* Adjusted margin */
+        }
+        .input-box select,
+        .input-box input{
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.1); /* Transparent background */
+            border: none;
+            outline: none;
+            border: 2px solid rgba(255,255,255,.2);
+            border-radius: 40px;
+            font-size: 16px;
+            color:black; /* Changed text color to black */
+            padding-left: 15px;
+        }
+        .input-box select::placeholder,
+        .input-box input::placeholder{
+            color: black; /* Changed placeholder text color to black */
+        }
+        .input-box select{
+            appearance: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            background-image: url('data:image/svg+xml;utf8,<svg fill="white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M10 12l-5-5 1.5-1.5L10 9l3.5-3.5L15 7z"/></svg>');
+            background-repeat: no-repeat;
+            background-position: right 15px center;
+        }
+        .wrapper .btn {
+            width: 100%;
+            height: 45px;
+            background: white;
+            border: none;
+            outline: none;
+            border-radius: 40px;
+            box-shadow: 0 0 10px rgba(0,0,0,.1);
+            cursor: pointer;
+            font-size: 16px;
+            color: #333;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <h1>Book Appointment</h1>
+        <form method="post">
+            {% csrf_token %}
+            <div class="input-box">
+                <label for="id_booking_area">Booking City:</label>
+                <select id="id_booking_area" name="booking_area" required onchange="populateHospitalNames()">
+                    <option value="">Select City</option>
+                    {% for area in area_data %}
+                        <option value="{{ area.name }}">{{ area.name }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="input-box">
+                <label for="id_hospital_name">Hospital Name:</label>
+                <select id="id_hospital_name" name="hospital_name" required>
+                    <option value="">Select Hospital</option>
+                    {% for hospital in hospital_data %}
+                        <option value="{{ hospital.text }}">{{ hospital.text }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="input-box">
+                <label for="id_booking_date">Booking Date:</label>
+                <input type="date" id="id_booking_date" name="booking_date" required>
+            </div>
+            <div class="input-box">
+                <label for="id_booking_time">Booking Time:</label>
+                <input type="time" id="id_booking_time" name="booking_time" required>
+            </div>
+            <button type="submit" class="btn">Book Appointment</button>
+        </form>
+    </div>
+    
+  
+
+     
+</body>
+</html>
