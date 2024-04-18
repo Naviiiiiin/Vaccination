@@ -14,7 +14,7 @@ phases:
       python: 3.8
 
     commands:
-      # - npm install
+     # install npm
 
   build:
     commands:
