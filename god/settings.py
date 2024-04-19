@@ -15,7 +15,7 @@ SECRET_KEY = 'django-insecure-^1$ns5d00u094*$u@4xs0di__1iq+tszx3y3rb^#d#umqd1u)8
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['vaccine-ecs-lb-1896062631.us-east-1.elb.amazonaws.com', 'localhost']  
 LOGIN_URL = '/login'
 
 
