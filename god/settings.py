@@ -15,7 +15,7 @@ SECRET_KEY = 'django-insecure-^1$ns5d00u094*$u@4xs0di__1iq+tszx3y3rb^#d#umqd1u)8
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['vaccine-ecs-lb-1896062631.us-east-1.elb.amazonaws.com']
+ALLOWED_HOSTS = ['*']
 LOGIN_URL = '/login'
 
 
@@ -33,10 +33,10 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
+    'django.middleware.common.CommonMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
-    'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
